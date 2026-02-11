@@ -75,7 +75,7 @@ def instantiate_plugins(plugin_cfg: Optional[DictConfig]) -> List[Plugin]:
 def calc_train_steps(args, dm, n_gpus=None):
     n_gpus = getattr(args, "n_gpus", n_gpus)
     dm.setup()
-    # Allow CPU training: treat n_gpus=0 as 1 device (CPU)
+    # Treat n_gpus=0 as 1 device (CPU)
     n_devices = max(n_gpus, 1)
     batches_per_device = math.ceil(len(dm.train_dataloader()) / float(n_devices))
     train_steps = math.ceil(batches_per_device / args.acc_batches) * args.n_epochs

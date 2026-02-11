@@ -19,7 +19,7 @@ precision: 16
 check_val_every_n_epoch: 5
 
 # DATA
-data_path: "train/data/uspto_1k.csv"  # doi thanh dataset cua ban
+data_path: "train/data/uspto_1k.csv"
 vocabulary_path: "train/bart_vocab.json"
 task: backward_prediction
 augmentation_probability: 0.0

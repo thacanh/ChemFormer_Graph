@@ -1,6 +1,5 @@
-"""
-Fine-tune NewChemformer from pretrained checkpoint
-"""
+"""Fine-tune NewChemformer from pretrained checkpoint."""
+
 import time
 import hydra
 import sys
@@ -20,10 +19,8 @@ def main(args):
     print("Fine-tuning NewChemformer with Geometry Embeddings")
     print(f"Checkpoint: {args.model_path}")
 
-    # BUILD MODEL (load from checkpoint)
     newchemformer = NewChemformer(args)
 
-    # TRAIN
     t0 = time.time()
     newchemformer.fit()
     t_fit = time.time() - t0
