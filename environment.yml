@@ -1,0 +1,35 @@
+name: chemformer
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.7.11
+  - rdkit=2022.09.3
+  - numpy=1.21.6
+  - pandas=1.3.5
+  - scipy=1.7.3
+  - scikit-learn=1.0.2
+  - matplotlib=3.5.3
+  - tqdm
+
+  # PyTorch with CUDA 11.1 (doi cudatoolkit theo server)
+  - pytorch=1.8.1
+  - cudatoolkit=11.1
+
+  - pip:
+    - pytorch-lightning==1.2.3
+    - torchmetrics==0.2.0
+    - hydra-core==1.3.2
+    - omegaconf==2.3.0
+    - tensorboard==2.11.2
+    - wandb==0.16.0
+    - regex==2023.10.3
+    - pysmilesutils==0.5.1
+    - -e .
+
+# Chi can 1 lenh:
+#   conda env create -f environment.yml
+#   conda activate chemformer
+#   python train/train_newchemformer.py

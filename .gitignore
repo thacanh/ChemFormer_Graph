@@ -1,0 +1,10 @@
+.pytest_cache
+__pycache__
+*.ckpt
+*.pt
+*.pth
+models/
+checkpoints/
+wandb/
+logs/
+outputs/

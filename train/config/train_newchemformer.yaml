@@ -1,0 +1,64 @@
+defaults:
+  - logger: tensorboard.yaml
+  - trainer: default.yaml
+  - _self_
+
+output_directory: "outputs/newchemformer"
+
+seed: 73
+resume: false
+batch_size: 8
+n_epochs: 5
+limit_val_batches: 0.1
+n_buckets: null
+n_gpus: 1
+n_nodes: 1
+acc_batches: 1
+accelerator: gpu
+precision: 16
+check_val_every_n_epoch: 5
+
+# DATA
+data_path: "train/data/uspto_1k.csv"
+vocabulary_path: "train/bart_vocab.json"
+task: backward_prediction
+augmentation_probability: 0.0
+augmentation_strategy: null
+data_device: cpu
+
+# GEOMETRY
+geom_embeddings_path: "train/data/geom_embeddings.npy"
+geom_embedding_dim: 64
+
+# MODEL
+model_path: null
+model_type: bart
+learning_rate: 0.0001
+weight_decay: 0.0
+clip_grad: 1.0
+d_model: 512
+n_layers: 6
+n_heads: 8
+d_feedforward: 2048
+max_seq_len: 512
+train_tokens: null
+train_mode: training
+n_beams: 1
+
+schedule: cycle
+warm_up_steps: 4000
+
+datamodule:
+  - SynthesisDataModule
+
+callbacks:
+  - LearningRateMonitor
+  - ModelCheckpoint:
+    - period: 1
+    - monitor: validation_loss
+  - ValidationScoreCallback
+  - StepCheckpoint
+
+scorers:
+  - FractionInvalidScore
+  - TopKAccuracyScore
