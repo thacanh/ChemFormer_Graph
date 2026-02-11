@@ -7,16 +7,16 @@ output_directory: "outputs/newchemformer_finetune"
 
 seed: 73
 resume: false
-batch_size: 64
+batch_size: 8
 n_epochs: 50
 limit_val_batches: 1.0
-n_buckets: 24
+n_buckets: null
 n_gpus: 1
 n_nodes: 1
-acc_batches: 8
+acc_batches: 1
 accelerator: null
 precision: 16
-check_val_every_n_epoch: 1
+check_val_every_n_epoch: 5
 
 # DATA
 data_path: "train/data/uspto_1k.csv"  # doi thanh dataset cua ban
@@ -31,9 +31,9 @@ geom_embeddings_path: "train/data/geom_embeddings.npy"
 geom_embedding_dim: 64
 
 # MODEL
-model_path: null             # doi thanh path .ckpt khi co pretrained model
+model_path: "train/model/last.ckpt"
 model_type: bart
-learning_rate: 0.0001        # lower LR for fine-tuning
+learning_rate: 0.0001
 weight_decay: 0.0
 clip_grad: 1.0
 d_model: 512
