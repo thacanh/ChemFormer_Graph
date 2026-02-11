@@ -1,41 +1,10 @@
-# ============================================
-# Chemformer - Requirements for GPU Training
-# ============================================
-# Python 3.7+
-# Server: Install PyTorch with CUDA first, then pip install -r requirements.txt
-#
-# IMPORTANT: Install PyTorch with CUDA BEFORE this file:
-#   pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html
-#   (or newer PyTorch version compatible with your CUDA driver)
+# Chemformer Requirements
+# Install PyTorch truoc: pip install torch==1.8.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html
 
-# === Core ML ===
 pytorch-lightning==1.2.3
-torchmetrics==0.2.0
-
-# === Chemistry ===
-rdkit-pypi==2022.9.3
-
-# === Config & CLI ===
 hydra-core==1.3.2
 omegaconf==2.3.0
-
-# === Data ===
 numpy==1.21.6
 pandas==1.3.5
-scipy==1.7.3
-
-# === Tokenizer ===
-regex==2023.10.3
-pysmilesutils==0.5.1
-
-# === Logging ===
+pysmilesutils==1.1.0
 tensorboard==2.11.2
-wandb==0.16.0
-
-# === Utils ===
-tqdm==4.66.1
-scikit-learn==1.0.2
-matplotlib==3.5.3
-
-# === Install Chemformer itself (from project root) ===
-# pip install -e .
