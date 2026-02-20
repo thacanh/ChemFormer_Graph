@@ -1,5 +1,3 @@
-"""Fine-tune NewChemformer from pretrained checkpoint."""
-
 import time
 import hydra
 import sys
