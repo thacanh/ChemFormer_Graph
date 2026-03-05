@@ -19,7 +19,7 @@ precision: 16
 check_val_every_n_epoch: 5
 
 # DATA
-data_path: "train/data/uspto_1k.csv"
+data_path: "train/data/uspto_clean.csv"
 vocabulary_path: "train/bart_vocab.json"
 task: backward_prediction
 augmentation_probability: 0.0
@@ -27,8 +27,8 @@ augmentation_strategy: null
 data_device: cpu
 
 # GEOMETRY
-geom_embeddings_path: "train/data/geom_embeddings.npy"
-geom_embedding_dim: 64
+geom_embeddings_path: "train/data/unimol_emb_50k.npy"
+geom_embedding_dim: 512
 
 # MODEL
 model_path: null

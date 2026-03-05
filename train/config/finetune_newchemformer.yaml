@@ -27,8 +27,8 @@ augmentation_strategy: null
 data_device: cpu
 
 # GEOMETRY
-geom_embeddings_path: "train/data/geom_embeddings.npy"
-geom_embedding_dim: 64
+geom_embeddings_path: "train/data/unimol_emb_1k.npy"
+geom_embedding_dim: 512
 
 # MODEL
 model_path: "train/model/last.ckpt"
