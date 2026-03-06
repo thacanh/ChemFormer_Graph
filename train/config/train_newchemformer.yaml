@@ -5,11 +5,11 @@ defaults:
 
 output_directory: "outputs/newchemformer"
 
-seed: 73
+seed: 37
 resume: false
-batch_size: 8
-n_epochs: 5
-limit_val_batches: 0.1
+batch_size: 32
+n_epochs: 25
+limit_val_batches: 0.05
 n_buckets: null
 n_gpus: 1
 n_nodes: 1
@@ -34,7 +34,7 @@ geom_embedding_dim: 512
 model_path: null
 model_type: bart
 learning_rate: 0.0001
-weight_decay: 0.0
+weight_decay: 0.0001
 clip_grad: 1.0
 d_model: 512
 n_layers: 6
@@ -46,7 +46,7 @@ train_mode: training
 n_beams: 1
 
 schedule: cycle
-warm_up_steps: 4000
+warm_up_steps: 8000
 
 datamodule:
   - SynthesisDataModule
